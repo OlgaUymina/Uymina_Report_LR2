@@ -6,8 +6,11 @@ using namespace std;
 
 // проверка корректности вводимых данных
 bool UserInput(string input)  {
-    // если строка пустая - ввод некорректен
-    if (input.empty()) return false;
+    char first_char = input[0]; 
+    if (first_char == '-' || !isdigit(first_char)) return false; 
+    // добавляем, чтобы не было отрицательных значений
+   
+    else if (input.empty()) return false;
     // попытаться
     try {
         // преобразование введенного значения в тип int
@@ -21,7 +24,7 @@ bool UserInput(string input)  {
 
 // вычисление площади прямоугольника
 int CalcRectangleArea(int NumberA, int NumberB) {
-    return NumberA * NumberB ;
+    return NumberA * NumberB +10 ;
 
 }
 #endif
